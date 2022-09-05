@@ -1,4 +1,4 @@
-import styles from '../../../styles/Home.module.css'
+import styles from "../../../styles/Home.module.css";
 
 import Layout_base from "../components/layouts/Layout_base";
 
@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <h1 className={styles.title}>
-        Welcome tosfdfdxz <a href="https://nextjs.org">Next.js!</a>
+        Welcome to theme_retail <a href="https://nextjs.org">Next.js!</a>
       </h1>
 
       <p className={styles.description}>
@@ -49,20 +49,9 @@ Home.getLayout = function getLayout(page) {
   return <Layout_base>{page}</Layout_base>;
 };
 
-export async function getStaticProps(context) {
-  /* switch(process.env.PROJECT_ENV) {
-    case 'project1': 
-      // fetch project 1 data
-    case 'project2': 
-      // fetch project 2 data
-    case 'project3': 
-      // fetch project 3 data
-  }
-  return {
-    props: {...}
-  } */
+/* export async function getStaticProps(context) {
   console.log(process.env.SELECTED_THEME);
   return { props: {} };
 }
-
+ */
 export default Home;

@@ -1,0 +1,7 @@
+{
+    "layout": [
+      { "element": "top-bar" },
+      { "element": "store-navigation" }
+    ]
+
+}

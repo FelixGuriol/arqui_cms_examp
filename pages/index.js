@@ -1,74 +1,18 @@
-import styles from "../styles/Home.module.css";
+import IndexRetail from "../themes/theme_retail/pages/index";
+import IndexDefault from "../themes/theme_default/pages/index";
 
-import Layout_base from "../themes/theme_retail/components/layouts/Layout_base";
-import Index  from '../themes/theme_retail/pages/index';
-function Home({theme}) {
-  if(theme == 'theme_retail') {
-    return <><Index /> </>
-  }
-  else {
-    return (
-      <>
-        <h1 className={styles.title}>
-          Welcome to {theme} <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-  
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-  
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-  
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-  
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-  
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </>
-    );
+function Home({ theme }) {
+  if (theme == "theme_retail") {
+    return <IndexRetail />;
+  } else {
+    return <IndexDefault />;
   }
 }
 
-Home.getLayout = function getLayout(page) {
-  return <Layout_base>{page}</Layout_base>;
-};
-
 export async function getStaticProps(context) {
-  /* switch(process.env.PROJECT_ENV) {
-    case 'project1': 
-      // fetch project 1 data
-    case 'project2': 
-      // fetch project 2 data
-    case 'project3': 
-      // fetch project 3 data
-  }
-  return {
-    props: {...}
-  } */
   const theme = process.env.SELECTED_THEME;
-  console.log('theme', theme);
-  return { props: {theme} };
+  console.log("theme", theme);
+  return { props: { theme } };
 }
 
 export default Home;
