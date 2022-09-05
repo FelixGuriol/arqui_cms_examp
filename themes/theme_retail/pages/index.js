@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.css";
+import styles from '../../../styles/Home.module.css'
 
 import Layout_base from "../components/layouts/Layout_base";
 
@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Welcome tosfdfdxz <a href="https://nextjs.org">Next.js!</a>
       </h1>
 
       <p className={styles.description}>
