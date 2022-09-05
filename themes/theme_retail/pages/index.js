@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-import Layout_base from "../themes/theme_retail/components/layouts/Layout_base";
+import Layout_base from "../components/layouts/Layout_base";
 
 function Home() {
   return (
