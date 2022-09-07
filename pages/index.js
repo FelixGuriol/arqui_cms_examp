@@ -1,18 +1,15 @@
-import IndexRetail from "../themes/theme_retail/pages/index";
-import IndexDefault from "../themes/theme_default/pages/index";
+import App from "../components/App/index";
+import React from 'react'
+import { configResolver } from "~/service/theme";
 
-function Home({ theme }) {
-  if (theme == "theme_retail") {
-    return <IndexRetail />;
-  } else {
-    return <IndexDefault />;
-  }
+function Home({ config }) {
+  return <App config={config} />;
 }
 
 export async function getStaticProps(context) {
   const theme = process.env.SELECTED_THEME;
-  console.log("theme", theme);
-  return { props: { theme } };
+  const config = configResolver(theme,'index','customhost.com')
+  return { props: { config } };
 }
 
 export default Home;
